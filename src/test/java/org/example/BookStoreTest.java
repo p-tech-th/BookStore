@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 class BookStoreTest {
 
-
 	@Test
 	void shouldInsertBook() {
 		//Arrange
@@ -57,5 +56,22 @@ class BookStoreTest {
 		//Assert
 		assertEquals(bookManager.getMaxPriceBook(), 120.0);
 	}
+
+	@Test
+	void shouldGetTotalBookPrice(){
+		BookStoreManager bookManager = new BookStoreManager(4);
+		Book doraemonBook = new Book("Doraemon", 80.0);
+		Book ultramanBook = new Book("Ultraman", 120.0);
+		Book harryPotterBook = new Book("Harrypotter", 1.0);
+		Book karmenRiderBook = new Book("karmenRider", 2.0);
+
+		bookManager.addBook(doraemonBook);
+		bookManager.addBook(ultramanBook);
+		bookManager.addBook(harryPotterBook);
+		bookManager.addBook(karmenRiderBook);
+
+		assertEquals( 203.00, bookManager.getTotalBookPrice());
+	}
+
 }
 

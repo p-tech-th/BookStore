@@ -21,6 +21,13 @@ public class BookStoreManager {
 			}
 		}
    }
+   public double getTotalBookPrice(){
+		double total = 0.0;
+	   for(int i = 0; i< this.bookshelf.length; i++) {
+		   total += this.bookshelf[i].getPrice();
+	   }
+	   return total;
+   }
 
    public double getMinPriceBook(){
      double min = this.bookshelf[0].getPrice();

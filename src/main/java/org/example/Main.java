@@ -24,12 +24,15 @@ public class Main {
 					bookStoreManager.addBook(new Book(name, price));
 
 				}
-				System.out.print("Please Select minBookPrice or maxBookPrice: ");
+				System.out.print("Please Select minBookPrice or maxBookPrice or totalPrice: ");
 				sc.nextLine();
 				String menuSelection = sc.nextLine();
 				if (Objects.equals(menuSelection, "minBookPrice")) {
 					System.out.println(bookStoreManager.getMinPriceBook());
-				} else if (Objects.equals(menuSelection, "maxBookPrice")) {
+				}
+				else if (Objects.equals(menuSelection, "totalPrice")) {
+					System.out.println(bookStoreManager.getTotalBookPrice());
+				}else if (Objects.equals(menuSelection, "maxBookPrice")) {
 					System.out.println(bookStoreManager.getMaxPriceBook());
 				}
 			} else if (Objects.equals(menu, "exit")) {
